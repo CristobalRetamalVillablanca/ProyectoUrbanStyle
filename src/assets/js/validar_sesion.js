@@ -10,3 +10,9 @@ if(!token){
         window.location.href = "../../login.html"
     }
 }
+
+const btnLogout = document.getElementById("btnLogout")
+btnLogout.addEventListener("click", ()=>{
+    localStorage.removeItem("token")
+    window.location.href("../../index.html")
+})
