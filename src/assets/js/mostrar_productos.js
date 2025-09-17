@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     card.classList.add("col-md-3");
 
     card.innerHTML = `
-      <div class="card h-100 text-center shadow-sm bg-dark border-0" style="color: #111111">
-        <img src="${prod.imagen}" class="card-img-top" alt="${prod.nombre}" style="background-color: #B0B0B0">
+      <div class="card h-100 text-center shadow-sm" style="color: #111111">
+        <img src="${prod.imagen}" class="card-img-top h-100" alt="${prod.nombre}" style="background-color: #B0B0B0">
         <div class="card-body d-flex flex-column" style="background-color: #B0B0B0">
           <h5 class="card-title">${prod.nombre}</h5>
           <p class="card-text">${prod.descripcion}</p>

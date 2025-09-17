@@ -20,7 +20,7 @@ const productos = [
     nombre: "Polera Estampada Street Art",
     precio: 14990,
     stock: 100,
-    descripcion: "Polera blanca estampada estilo street art.",
+    descripcion: "Polera negra estampada estilo street art.",
     imagen: "src/assets/img/polera-street.png"
   },
   {
@@ -29,7 +29,7 @@ const productos = [
     precio: 15990,
     stock: 120,
     descripcion: "Boxy fit negra con logo minimalista.",
-    imagen: "./assets/img/polera-minimal.png"
+    imagen: "src/assets/img/polera-minimal.webp"
   },
   {
     codigo: "PT001",
@@ -37,15 +37,15 @@ const productos = [
     precio: 32990,
     stock: 70,
     descripcion: "Jeans baggy azul lavado.",
-    imagen: "./assets/img/jeans-baggy.png"
+    imagen: "src/assets/img/jeans-baggy.webp"
   },
   {
     codigo: "PT002",
-    nombre: "Cargo Pants Black Utility",
+    nombre: "Cargo Pants Black",
     precio: 29990,
     stock: 50,
     descripcion: "Cargo negro con múltiples bolsillos.",
-    imagen: "./assets/img/cargo-black.png"
+    imagen: "src/assets/img/cargo-black.webp"
   },
   {
     codigo: "GR001",
@@ -53,7 +53,7 @@ const productos = [
     precio: 12990,
     stock: 90,
     descripcion: "Snapback negro clásico.",
-    imagen: "./assets/img/gorra-snapback.png"
+    imagen: "src/assets/img/gorra-snapback.webp"
   },
   {
     codigo: "GR002",
@@ -61,6 +61,6 @@ const productos = [
     precio: 11990,
     stock: 60,
     descripcion: "Trucker negra con logo bordado.",
-    imagen: "./assets/img/gorra-trucker.png"
+    imagen: "src/assets/img/gorra-trucker.jpg"
   }
 ];
