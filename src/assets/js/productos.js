@@ -5,7 +5,7 @@ const productos = [
     precio: 28990,
     stock: 60,
     descripcion: "Hoodie negro oversize, 100% algodón.",
-    imagen: "src/assets/img/hoodie-black.png"
+    imagen: "src/assets/img/PRODUCTOS/hoodie-black.png"
   },
   {
     codigo: "HD002",
@@ -13,7 +13,7 @@ const productos = [
     precio: 28990,
     stock: 80,
     descripcion: "Hoodie gris claro, corte unisex.",
-    imagen: "src/assets/img/hoodie-grey.png"
+    imagen: "src/assets/img/PRODUCTOS/hoodie-grey.png"
   },
   {
     codigo: "PL001",
@@ -21,7 +21,7 @@ const productos = [
     precio: 14990,
     stock: 100,
     descripcion: "Polera negra estampada estilo street art.",
-    imagen: "src/assets/img/polera-street.png"
+    imagen: "src/assets/img/PRODUCTOS/polera-street.png"
   },
   {
     codigo: "PL002",
@@ -29,7 +29,7 @@ const productos = [
     precio: 15990,
     stock: 120,
     descripcion: "Boxy fit negra con logo minimalista.",
-    imagen: "src/assets/img/polera-minimal.webp"
+    imagen: "src/assets/img/PRODUCTOS/polera-minimal.webp"
   },
   {
     codigo: "PT001",
@@ -37,7 +37,7 @@ const productos = [
     precio: 32990,
     stock: 70,
     descripcion: "Jeans baggy azul lavado.",
-    imagen: "src/assets/img/jeans-baggy.webp"
+    imagen: "src/assets/img/PRODUCTOS/jeans-baggy.webp"
   },
   {
     codigo: "PT002",
@@ -45,7 +45,7 @@ const productos = [
     precio: 29990,
     stock: 50,
     descripcion: "Cargo negro con múltiples bolsillos.",
-    imagen: "src/assets/img/cargo-black.webp"
+    imagen: "src/assets/img/PRODUCTOS/cargo-black.webp"
   },
   {
     codigo: "GR001",
@@ -53,7 +53,7 @@ const productos = [
     precio: 12990,
     stock: 90,
     descripcion: "Snapback negro clásico.",
-    imagen: "src/assets/img/gorra-snapback.webp"
+    imagen: "src/assets/img/PRODUCTOS/gorra-snapback.webp"
   },
   {
     codigo: "GR002",
@@ -61,6 +61,6 @@ const productos = [
     precio: 11990,
     stock: 60,
     descripcion: "Trucker negra con logo bordado.",
-    imagen: "src/assets/img/gorra-trucker.jpg"
+    imagen: "src/assets/img/PRODUCTOS/gorra-trucker.jpg"
   }
 ];
