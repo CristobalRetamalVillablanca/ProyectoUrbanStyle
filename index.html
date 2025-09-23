@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UrbanStyle</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+#carouselExampleIndicators {
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#carouselExampleIndicators .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%; /* ajusta para centrar la imagen */
+}
+</style>
 </head>
+
+    <style>
+        body {
+            background: url("src/assets/img/textura.png") repeat;
+            background-size: auto;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            }
+    </style>
+
 <body>
     <!-- Semantica de un sitio web-->
-     <header class="bg-dark text-white py-3">
+     <header class="text-white py-3" style="background-color: #111111;">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="h4 mb-0"> UrbanStyle</h1>
              <nav>
@@ -26,7 +52,53 @@
              </nav>   
 
         </div>
-    </header>
-    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+     </header>
+
+     
+
+     <div id="carouselExampleIndicators" class="carousel slide">
+        
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="src/assets/img/CARRUSEL/LOGO.png" class="d-block w-100" style="height: 80vh; object-fit: cover; object-position: center 40%;" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="src/assets/img/CARRUSEL/LOGO.png" class="d-block w-100" style="height: 80vh; object-fit: cover; object-position: center 40%;" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="src/assets/img/CARRUSEL/LOGO.png" class="d-block w-100" style="height: 80vh; object-fit: cover; object-position: center 40%;" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    <!-- TITULO-->
+    <main class="container my-5">
+        <h2 class="text-center mb-4  font fw-bolder " style="color: #111111;">Catálogo de Productos</h2>
+            <div id="productos-container" class="row g-4" style="color: #555555;">
+                <!-- Los productos se cargan -->
+            </div>
+    </main>
+
+    <script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/assets/js/productos.js"></script>
+    <script src="src/assets/js/mostrar_productos.js"></script>
+
+    <footer class="footer">
+        <p class="footer__text fw-bold text-center" style="color: #111111; " >&copy; 2025 Sitio Oficial de UrbanStyle</p>
+    </footer>
 </body>
+
 </html>
