@@ -1,0 +1,158 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Encabezado */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.site-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 20px;
+}
+
+.cart-icon {
+    font-size: 1.1em;
+}
+
+/* Contenedor principal del carrito */
+.cart-page {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-page h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Distribución de la cuadrícula principal (lista de productos y resumen) */
+.cart-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Lista de productos */
+.product-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.product-item img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    margin-right: 20px;
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+.product-info p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.product-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.product-quantity .price {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.quantity-control button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-control input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+/* Resumen del pago */
+.checkout-summary {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.checkout-summary .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.coupon {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.coupon input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.coupon .apply-btn {
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}

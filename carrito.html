@@ -3,32 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras | Site Name</title>
+    <title>Carrito de Compras | UrbanStyle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <header class="site-header">
-        <h1 class="site-name">Site Name</h1>
-        <nav class="main-nav">
-            <a href="#">Home</a>
-            <a href="#">Productos</a>
+<style>
+    body {
+        background: url("src/assets/img/textura.png") repeat;
+        background-size: auto;
+        color: white; /* Esto se ajustará en el CSS, pero lo mantengo por si las moscas */
+        font-family: 'Montserrat', sans-serif;
+    }
+    /* Estilos para el carrito de compras */
+    .cart-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
+        margin-top: 24px;
+    }
+    .product-item {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        margin-bottom: 16px;
+        background-color: white;
+        color: #555555;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .product-image {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        margin-right: 16px;
+        border-radius: 4px;
+    }
+    .product-info {
+        flex-grow: 1;
+    }
+    .product-info h3 {
+        color: #111111;
+        font-weight: bold;
+    }
+    .product-info p {
+        color: #555555;
+    }
+    .product-quantity {
+        text-align: right;
+    }
+    .price {
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: #111111;
+    }
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .quantity-control button {
+        background-color: #f0f0f0;
+        border: none;
+        padding: 4px 12px;
+        cursor: pointer;
+    }
+    .quantity-control input {
+        width: 40px;
+        text-align: center;
+        border: none;
+        outline: none;
+        color: #111111;
+    }
+    .checkout-summary {
+        padding: 24px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        color: #555555;
+    }
+    .total {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        color: #111111;
+    }
+    .coupon {
+        display: flex;
+        margin-bottom: 24px;
+    }
+    .coupon input {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+    }
+    .coupon button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-left: none;
+        border-radius: 0 4px 4px 0;
+    }
+    .pay-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #198754; /* Verde de Bootstrap */
+        color: white;
+        border: none;
+        font-size: 1.2rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <header class="text-white py-3" style="background-color: #111111;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0">UrbanStyle</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contacto</a>
+                    </li>
+                </ul>
             </nav>
-        <div class="cart-icon">
-            🛒 Cart (3)
         </div>
     </header>
 
-    <main class="cart-page">
-        <h2>Mi carrito de compras</h2>
-
+    <main class="container my-5" style="color: #555555;">
+        <h2 class="text-center mb-4 fw-bolder" style="color: #111111;">Mi carrito de compras</h2>
+        
         <section class="cart-grid">
             <div class="product-list">
                 <div class="product-item">
-                    <img src="placeholder.svg" alt="Producto 1">
+                    <div class="product-image"></div>
                     <div class="product-info">
                         <h3>Producto #1</h3>
-                        <p>Descripción del producto...</p>
+                        <p>Pink lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     </div>
                     <div class="product-quantity">
                         <span class="price">$ 8.000</span>
@@ -39,7 +162,39 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Producto #2</h3>
+                        <p>Pink lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                    <div class="product-quantity">
+                        <span class="price">$ 6.000</span>
+                        <div class="quantity-control">
+                            <button>-</button>
+                            <input type="number" value="1" min="1">
+                            <button>+</button>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Producto #3</h3>
+                        <p>Pink lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                    <div class="product-quantity">
+                        <span class="price">$ 10.000</span>
+                        <div class="quantity-control">
+                            <button>-</button>
+                            <input type="number" value="1" min="1">
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <aside class="checkout-summary">
                 <div class="total">
@@ -48,12 +203,16 @@
                 </div>
                 <div class="coupon">
                     <input type="text" placeholder="Ingrese el cupón de descuento">
-                    <button class="apply-btn">APLICAR</button>
+                    <button class="btn btn-secondary apply-btn">APLICAR</button>
                 </div>
                 <button class="pay-btn">PAGAR</button>
             </aside>
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer">
+        <p class="footer__text text-center text-muted">&copy; 2025 Mi sitio</p>
+    </footer>
 </body>
 </html>
