@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras | Site Name</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1 class="site-name">Site Name</h1>
+        <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="#">Productos</a>
+            </nav>
+        <div class="cart-icon">
+            🛒 Cart (3)
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <h2>Mi carrito de compras</h2>
+
+        <section class="cart-grid">
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="placeholder.svg" alt="Producto 1">
+                    <div class="product-info">
+                        <h3>Producto #1</h3>
+                        <p>Descripción del producto...</p>
+                    </div>
+                    <div class="product-quantity">
+                        <span class="price">$ 8.000</span>
+                        <div class="quantity-control">
+                            <button>-</button>
+                            <input type="number" value="1" min="1">
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            <aside class="checkout-summary">
+                <div class="total">
+                    <span>TOTAL:</span>
+                    <span class="total-price">$ 24.000</span>
+                </div>
+                <div class="coupon">
+                    <input type="text" placeholder="Ingrese el cupón de descuento">
+                    <button class="apply-btn">APLICAR</button>
+                </div>
+                <button class="pay-btn">PAGAR</button>
+            </aside>
+        </section>
+    </main>
+
+</body>
+</html>
