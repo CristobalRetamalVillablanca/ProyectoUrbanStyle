@@ -20,20 +20,28 @@
   object-fit: cover;
   object-position: center 60%; /* ajusta para centrar la imagen */
 }
-</style>
-</head>
+body {
+    background: url("src/assets/img/textura.png") repeat;
+    background-size: auto;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+/* Botón flotante del carrito */
+#carrito {
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1050;
+    color: #111111; /* <-- texto negro */
+  }
 
-    <style>
-        body {
-            background: url("src/assets/img/textura.png") repeat;
-            background-size: auto;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            }
+  #carrito button, #carrito strong, #carrito span {
+    color: #111111; /* asegurar que todo texto dentro del carrito sea negro */
+  }
     </style>
-
+</head>
 <body>
-    <!-- Semantica de un sitio web-->
+     <!-- HEADER -->
      <header class="text-white py-3" style="background-color: #111111;">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="h4 mb-0"> UrbanStyle</h1>
@@ -50,12 +58,29 @@
                     </li>
                 </ul>
              </nav>   
-
         </div>
      </header>
 
-     
+     <!-- BOTÓN DEL CARRITO -->
+     <button id="toggle-carrito" 
+             class="btn btn-success position-fixed bottom-0 end-0 m-3 rounded-circle shadow"
+             style="width: 60px; height: 60px;">
+       🛒
+     </button>
 
+     <!-- VENTANA DEL CARRITO -->
+     <div id="carrito" class="position-fixed bottom-0 end-0 m-3 p-3 bg-white shadow rounded d-none"
+         style="width: 300px; max-height: 400px; overflow-y: auto; z-index: 1050;">
+       <h5 class="mb-3">Carrito</h5>
+       <div id="carrito-items"></div>
+       <div class="d-flex justify-content-between mt-3">
+         <strong>Total:</strong>
+         <span id="carrito-total">$0</span>
+       </div>
+       <button id="btn-pagar" class="btn btn-success w-100 mt-3">Pagar</button>
+     </div>
+
+     <!-- CAROUSEL -->
      <div id="carouselExampleFade" class="carousel slide carousel-fade">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -78,21 +103,23 @@
       </button>
     </div>
 
-    <!-- TITULO-->
+    <!-- CATÁLOGO DE PRODUCTOS -->
     <main class="container my-5">
-        <h2 class="text-center mb-4  font fw-bolder " style="color: #111111;">Catálogo de Productos</h2>
-            <div id="productos-container" class="row g-4" style="color: #555555;">
-                <!-- Los productos se cargan -->
-            </div>
+        <h2 class="text-center mb-4 font fw-bolder" style="color: #111111;">Catálogo de Productos</h2>
+        <div id="productos-container" class="row g-4" style="color: #555555;">
+            <!-- Los productos se cargan desde mostrar_productos.js -->
+        </div>
     </main>
 
+    <!-- SCRIPTS -->
     <script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/assets/js/productos.js"></script>
     <script src="src/assets/js/mostrar_productos.js"></script>
+    <script src="src/assets/js/carrito.js"></script>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <p class="footer__text fw-bold text-center" style="color: #111111; " >&copy; 2025 Sitio Oficial de UrbanStyle</p>
+        <p class="footer__text fw-bold text-center" style="color: #111111;">&copy; 2025 Sitio Oficial de UrbanStyle</p>
     </footer>
 </body>
-
 </html>

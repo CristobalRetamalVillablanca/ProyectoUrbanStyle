@@ -3,76 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Producto</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Producto - UrbanStyle</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 
   <style>
-        body {
-            background: url("src/assets/img/textura.png") repeat;
-            background-size: auto;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            }
-    </style>
+    body {
+      background: url("src/assets/img/textura.png") repeat;
+      font-family: 'Montserrat', sans-serif;
+      color: #111111;
+    }
+
+    /* BOTÓN flotante carrito */
+    #toggle-carrito {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 24px;
+    }
+
+    /* VENTANA carrito */
+    #carrito {
+      width: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+      z-index: 1050;
+      background-color: white;
+      color: #111111; /* Texto negro */
+    }
+
+    /* Forzar que todo dentro del carrito sea negro */
+    #carrito * {
+      color: #111111 !important;
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="text-white py-3" style="background-color: #111111;">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="h4 mb-0"> UrbanStyle</h1>
-             <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="index.html"> Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contacto</a>
-                    </li>
-                </ul>
-             </nav>   
-
-        </div>
-     </header>
-  <div class="container py-5">
-    <div id="detalle-producto" class="row justify-content-center">
-      <!-- Aquí se cargará el detalle con JS -->
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">UrbanStyle</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <!-- BOTÓN DEL CARRITO -->
+  <button id="toggle-carrito"
+          class="btn btn-success position-fixed bottom-0 end-0 m-3 shadow">
+    🛒
+  </button>
+
+  <!-- VENTANA DEL CARRITO -->
+  <div id="carrito" 
+       class="position-fixed bottom-0 end-0 m-3 p-3 shadow rounded d-none">
+    <h5 class="mb-3">Carrito</h5>
+    <div id="carrito-items"></div>
+    <div class="d-flex justify-content-between mt-3">
+      <strong>Total:</strong>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button id="btn-pagar" class="btn btn-success w-100 mt-3">Pagar</button>
   </div>
 
+  <!-- CONTENIDO DEL PRODUCTO -->
+  <main class="container my-5">
+    <div id="detalle-producto" class="row g-4">
+      <!-- Producto se cargará dinámicamente -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="fw-bold text-center" style="color: #111111;">
+      &copy; 2025 Sitio Oficial de UrbanStyle
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="src/assets/js/productos.js"></script>
+  <script src="src/assets/js/carrito.js"></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Mostrar producto según ID
       const params = new URLSearchParams(window.location.search);
       const idProducto = params.get("id");
 
-      // Buscar el producto en la lista
-      const producto = productos.find(p => p.codigo === idProducto);
-
       const contenedor = document.getElementById("detalle-producto");
+      const producto = productos.find(p => p.id === idProducto || p.codigo === idProducto);
 
       if (producto) {
         contenedor.innerHTML = `
-          <div class="col-md-6">
-            <img src="${producto.imagen}" alt="${producto.nombre}" class="img-fluid rounded shadow" style="background: white;">
+          <div class="col-md-6 text-center">
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="img-fluid rounded">
           </div>
           <div class="col-md-6 d-flex flex-column justify-content-center">
-            <h2 class="fw-bold" style="color: black">${producto.nombre}</h2>
-            <p class="text-muted">${producto.descripcion}</p>
-            <p class="fs-4 fw-bold text-success">$${producto.precio.toLocaleString("es-CL")}</p>
-            <p style="color: black"><strong>Stock:</strong> ${producto.stock} unidades</p>
-            <button class="btn btn-success btn-lg mt-3">Agregar al carrito</button>
-            <a href="index.html" class="btn btn-secondary btn-lg mt-3">Volver al catálogo</a>
+            <h2>${producto.nombre}</h2>
+            <p>${producto.descripcion}</p>
+            <h4 class="text-success">$${producto.precio.toLocaleString("es-CL")}</h4>
+            <button class="btn btn-primary mt-3"
+              onclick="agregarAlCarrito({id: '${producto.id || producto.codigo}', nombre: '${producto.nombre}', precio: ${producto.precio}, cantidad: 1})">
+              Añadir al Carrito
+            </button>
           </div>
         `;
       } else {
-        contenedor.innerHTML = `
-          <div class="col-12 text-center">
-            <h3 class="text-danger">Producto no encontrado 😢</h3>
-            <a href="index.html" class="btn btn-primary mt-3">Volver al catálogo</a>
-          </div>
-        `;
+        contenedor.innerHTML = `<p class="text-danger">Producto no encontrado</p>`;
       }
     });
   </script>
