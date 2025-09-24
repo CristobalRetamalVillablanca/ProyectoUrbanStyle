@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/assets/css/contacto.css">
+</head>
+<body class="corpo">
+    <header class="text-white py-3" style="background-color: #111111;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0"> UrbanStyle</h1>
+             <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html"> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+             </nav>   
+        </div>
+     </header>
+
+    <main class="content">
+
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h2 class="h6 text-secondary">Nombre</h2>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="nombreInput" placeholder="nombre" required>
+                    </div>
+                    <p id="mensajeNombre" class="fw-bold text-success"></p>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <h2 class="h6 text-secondary">Primer Apellido</h2>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="apellidoInput" placeholder="apellido" required>
+                    </div>
+                    <p id="mensajeApellido" class="fw-bold text-success"></p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h2 class="h6 text-secondary">Run</h2>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="runInput" placeholder="21.111.111-1" required>
+                        </div>
+                        <p id="mensajeRun" class="fw-bold text-success"></p>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <h2 class="h6 text-secondary">Email</h2>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="emailInput" placeholder="ejemplo@correo.cl" required>
+                        </div>
+                        <p id="mensajeEmail" class="fw-bold text-success"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h2 class="h6 text-secondary">Teléfono</h2>
+                        <div class="input-group">
+                            <input type="tel" class="form-control" id="telefonoInput" placeholder="+569XXXXXXXX" required>
+                        </div>
+                        <p id="mensajeTelefono" class="fw-bold text-success"></p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <h2 class="h6 text-secondary">Mensaje</h2>
+                        <div class="input-group">
+                            <textarea class="form-control" id="mensajeInput" placeholder="Escribe tu mensaje aquí..."  required></textarea>
+                        </div>
+                        <p id="mensajeMensaje" class="fw-bold text-success"></p>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+
+            <button class="btn btn-primary" id="btnRegistro"> Confirmar </button>
+            
+        </div> 
+    </main>
+
+    <div>
+        <div class="container py-4">
+            <h2>Aqui podemos ayudar</h2>
+            <p>Si tienes dudas sobre nustros productos, 
+                donde se encuentran nuestros locales y nesesitas ayuda, <br>
+                llámanos y déjanos tus datos. Te contactaremos a la brevedad para poder ayudarte</p>
+            <li>Escribe a nuestro correo <a href="#">user.name@urbanstile.cl</a></li>
+            <li>Nuestro WhatsApp <a href="#">+569 5555 8899</a></li>
+            <li>Telefono <a href="#">+56 111 232 333</a></li>
+        </div>
+    </div>
+    <footer class="footer">
+        <p class="footer__text">&copy; </p>
+    </footer>
+
+    <script src="./src/assets/js/contacto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
